@@ -3,9 +3,12 @@ package main
 import "fmt"
 
 func MaxSum(a []int) int{
-	sum := 0
-	b := 0
-	for i :=0; i<len(a); i++{
+	if len(a) == 1 {
+		return a[0]
+	}
+	sum := a[0]
+	b := a[0]
+	for i :=1; i<len(a); i++{
 		if a[i] > b+a[i] {
 			b = a[i]
 		}else{
